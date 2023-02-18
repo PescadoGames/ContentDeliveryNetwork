@@ -1,0 +1,354 @@
+@charset "utf-8";
+
+body {
+    padding-top: 60px;
+}
+
+.installdialog {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: #00000085;
+    z-index: -10;
+    opacity: 0;
+    transition: .5s;
+}
+
+.installdialogshow {
+    z-index: 10;
+    opacity: 1;
+}
+
+.installdialogcont {
+    position: fixed;
+    width: 30%;
+    height: 75%;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2a2a2a;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px 0px #000000;
+    overflow: hidden;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    z-index: -10;
+    opacity: 0;
+    transition: .5s;
+}
+
+.installdialogcontshow {
+    z-index: 10;
+    top: 50%;
+    opacity: 1;
+}
+
+.installdialogcont p {
+    width: auto;
+    font-size: 150%;
+    word-break: keep-all;
+    text-align: center;
+}
+
+.installdialogrightflex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#installdialogstartinstallbutton {
+    width: 100%;
+    margin-right: 5px;
+    font-size: 150%;
+    background: rgb(0 149 255);
+    border-radius: 10px;
+    transition: .25s;
+}
+
+#installdialogstartinstallbutton:hover {
+    background: rgb(35 168 255);
+}
+
+#installdialogstartinstallbutton:active {
+    background: rgb(0 125 207);
+}
+
+#installdialogcancellbutton {
+    width: 100%;
+    margin-left: 5px;
+    font-size: 150%;
+    background: rgb(255 66 0);
+    border-radius: 10px;
+    transition: .25s;
+}
+
+#installdialogcancellbutton:hover {
+    background: rgb(255 102 35);
+}
+
+#installdialogcancellbutton:active {
+    background: rgb(175 45 0);
+}
+
+.installheader {
+    position: fixed;
+    background: #2a2a2a;
+    width: 100%;
+    height: 60px;
+    top: -70px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    transition: .5s;
+    box-shadow: 0px 2px 10px 0px #000000;
+}
+
+.installheadershow {
+    top: 0;
+}
+
+.installheader img {
+    border-radius: 7.5px;
+}
+
+.installheader p {
+    margin-left: 10px;
+    font-size: xx-large;
+}
+
+#headerinstallbutton {
+    background: rgb(0 149 255);
+    height: 35px;
+    width: 10%;
+    border-radius: 5px;
+    border: 1.5px solid;
+    transition: .25s;
+    margin: 0;
+    width: 10%;
+    margin-left: auto;
+    box-shadow: 0px 0px 0px 0px #000000;
+}
+
+#headerinstallbutton:hover {
+    background: rgb(35 168 255);
+}
+
+#headerinstallbutton:active {
+    background: rgb(0 125 207);
+
+}
+
+.apptitle {
+    background: linear-gradient(-90deg, #3c3c3c, rgba(255, 255, 255, 0));
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.apptitle img {
+    position: absolute;
+    height: 100%;
+    right: 0;
+}
+
+.apptitlebackground {
+    background: linear-gradient(90deg, #141414 30%, rgb(54 54 54 / 50%));
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.appdetailscont {
+    width: 30%;
+    padding: 10px;
+}
+
+#apptitle {
+    width: 200%;
+    font-size: 4.9vw;
+    word-break: keep-all;
+}
+
+.appdetails {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #ffffff 50%, #ffffff00 100%);
+    border-image-slice: 1;
+    width: 100%;
+}
+
+.appdetails img {
+    position: relative;
+    height: 65px;
+    left: 0;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.tateflex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.tateflex p {
+    font-size: 1.2vw
+}
+
+.tateflex a {
+    color: rgb(76 184 255);
+    font-size: 1.2vw
+}
+
+#lastmoddate {
+    margin-top: 2.5px;
+}
+
+#installbutton {
+    background: rgb(0 149 255);
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1.5px solid;
+    margin-top: 10px;
+    transition: .25s;
+    box-shadow: 0px 0px 0px 0px #000000;
+}
+
+#installbutton:hover {
+    background: rgb(35 168 255);
+}
+
+#installbutton:active {
+    background: rgb(0 125 207);
+    box-shadow: 0px 0px 0px 0px #000000;
+}
+
+#container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.abouttateflex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 0;
+    width:50%;
+}
+
+#details {
+    font-size: medium;
+}
+
+@media screen and (max-width:960px) {
+    .installheader {
+        position: fixed;
+        background: #2a2a2a;
+        width: 100%;
+        height: 160px;
+        bottom: -160px;
+        top: auto;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        transition: .5s;
+        box-shadow: 0px 2px 10px 0px #000000;
+    }
+
+    .installheadershow {
+        bottom: 0;
+    }
+
+    #headerinstallbutton {
+        background: rgb(0 149 255);
+        height: 35px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1.5px solid;
+        margin-top: 0;
+        transition: .25s;
+    }
+
+    #headerinstallbutton:hover {
+        background: rgb(35 168 255);
+    }
+
+    #headerinstallbutton:active {
+        background: rgb(0 125 207);
+    }
+
+    #installbutton {
+        background: rgb(0 149 255);
+        height: 35px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1.5px solid;
+        margin-top: 10px;
+        transition: .25s;
+    }
+
+    #installbutton:hover {
+        background: rgb(35 168 255);
+    }
+
+    #installbutton:active {
+        background: rgb(0 125 207);
+    }
+
+    .appdetailscont {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #apptitle {
+        width: auto;
+        font-size: 15vw;
+        word-break: break-all;
+    }
+
+    .tateflex p {
+        font-size: 4vw
+    }
+
+    .tateflex a {
+        color: rgb(76 184 255);
+        font-size: 4vw;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 110px;
+    }
+}

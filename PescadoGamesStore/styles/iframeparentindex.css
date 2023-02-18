@@ -1,0 +1,740 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;/*高さを100%にして描画エリアをとる*/
+}
+
+body {
+  color: #fff;
+  background: #191919;
+  font-family: 'Roboto', "Noto Sans JP", sans-serif;
+  text-align: center;
+  height: 100%;/*高さを100%にして描画エリアをとる*/
+}
+
+body {
+  padding-top: 25px;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+.header {
+  height: 25px;
+  width: 100%;
+  padding: 0px 15px;
+  background-color:#191919;
+  border-bottom: 0px solid;
+  z-index:10;
+  position: fixed;
+  top: 0;
+  display: flex;
+}
+
+.header img {
+  padding: 5px;
+  background-image: linear-gradient(135deg, #fff 0%, #191919 25%, #0066ff);
+  border-radius: 20px;
+}
+
+.logo {
+  justify-content: center;
+  display: flex;
+  border: 5px solid;
+  border-image: linear-gradient(125deg,#0078a5,#00a56a);
+  border-image-slice: 1;
+}
+
+.pc {
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.close {
+  margin-left: auto;
+  margin-right: 2px;
+}
+
+.header ul {
+  justify-content: center;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header li {
+	list-style-type:none;		/*リストマーカー無しにする*/
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  line-height: 25px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.header input {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  height: 22.5px;
+  user-select: none;
+  margin-left: 10px;
+  -webkit-user-drag: none;
+  filter: drop-shadow(2.5px 2.5px 1px #525252);
+}
+
+.MiniAndFullButtonStyle {
+  width: 25px;
+  background-image: linear-gradient(180deg, #fff 0%, #191919 2.5%, #0066ff);
+}
+
+.CloseButtonStyle {
+  width: 55px;
+  background-image: linear-gradient(180deg, #fff 0%, #191919 2.5%, #ff0000);
+}
+
+a li {
+	list-style-type:none;		/*リストマーカー無しにする*/
+}
+
+.PaddingTop {
+	padding-top: 50px;
+}
+
+.SeihinTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*========= LoadingのためのCSS ===============*/
+
+/* Loading背景画面設定　*/
+#splash {
+    /*fixedで全面に固定*/
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	text-align:center;
+	color:#fff;
+}
+
+/* Loading画像中央配置　*/
+#splash_text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    z-index: 999;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	width: 100%;
+}
+
+/*IE11対策用バーの線の高さ※対応しなければ削除してください*/
+#splash_text svg{
+    height: 2px;
+}
+
+/*割れる画面のアニメーション*/
+.loader_cover {
+    width: 100%;
+    height: 50%;
+    background-color: #111;
+    transition: all .2s cubic-bezier(.04, .435, .315, .9);
+    transform: scaleY(1);
+}
+/*上の画面*/
+.loader_cover-up {
+    transform-origin: center top;
+}
+
+/*下の画面*/
+.loader_cover-down {
+    position: absolute;
+    bottom: 0;
+    transform-origin: center bottom;
+}
+/*クラス名がついたらY軸方向に0*/
+.coveranime {
+    transform: scaleY(0);
+}
+
+
+#particles-js{
+	position:fixed;/*描画固定*/
+	z-index:-1;/*描画を一番下に*/
+	width: 100%;
+	height: 100%;
+	background-color:#191919;/*背景色*/
+}
+
+#wrapper{
+	position: relative;/*描画を#particles-jsよりも上にするためposition:relative;を指定*/
+	z-index: 1;/*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
+	width:100%;
+	height: 100%;
+}
+
+.right {
+margin-left: auto;
+}
+
+.left {
+margin-right: auto;
+}
+
+.InstallButton {
+	left:50%;
+	width:100%;
+	height:50px;
+	background-image: linear-gradient(45deg,#005078,#00785D);
+	border-radius: 30px;
+	margin: 20px 0 20px 0;
+}
+
+/* SeihinZyouhouTab.start */
+
+.seihintab {
+	float: right;
+	margin: 0 0 0 auto;
+	top: 10;
+	z-index:10;
+	filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
+	margin : 2%;
+	padding : 0.5em;
+	text-align : center;
+	box-sizing : border-box;
+	-moz-border-radius: 0.5em;
+	-webkit-border-radius: 0.5em;
+	-o-border-radius: 0.5em;
+	-ms-border-radius: 0.5em;
+	background-color: #252525;
+	border-radius: 30px;
+	opacity : 0;
+	transform : translate(0, 50px);
+	transition : all 500ms;
+}
+/* 画面内に入った状態 */
+.seihintab.scrollin {
+	opacity : 1;
+	transform : translate(0, 0);
+	}
+
+/* SeihinZyouhouTab.end */
+
+.nofadein {
+	filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.6));
+	margin : 2%;
+	padding : 0.5em;
+	text-align : center;
+	box-sizing : border-box;
+	-moz-border-radius: 0.5em;
+	-webkit-border-radius: 0.5em;
+	-o-border-radius: 0.5em;
+	-ms-border-radius: 0.5em;
+	background-color: #252525;
+	border-radius: 30px;
+	opacity : 0;
+	transform : translate(0, 50px);
+	transition : all 500ms;
+}
+
+.fadeinsection {
+	overflow : hidden;
+	padding-bottom : 3em;
+	}
+
+/* 画面外にいる状態 */
+.fadein {
+	filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.6));
+	margin : 2%;
+	padding : 0.5em;
+	text-align : center;
+	box-sizing : border-box;
+	-moz-border-radius: 0.5em;
+	-webkit-border-radius: 0.5em;
+	-o-border-radius: 0.5em;
+	-ms-border-radius: 0.5em;
+	background-color: #252525;
+	border-radius: 30px;
+	opacity : 0;
+	transform : translate(0, 50px);
+	transition : all 500ms;
+	}
+
+/* 画面内に入った状態 */
+.fadein.scrollin {
+	opacity : 1;
+	transform : translate(0, 0);
+	}
+/* 2つ目の要素に200msのdelayをかける */
+#effect2 > div .fadein:nth-of-type(2) {
+	-moz-transition-delay:200ms;
+	-webkit-transition-delay:200ms;
+	-o-transition-delay:200ms;
+	-ms-transition-delay:200ms;
+	}
+/* 3つ目の要素に400msのdelayをかける */
+#effect2 > div .fadein:nth-of-type(3) {
+	-moz-transition-delay:400ms;
+	-webkit-transition-delay:400ms;
+	-o-transition-delay:400ms;
+	-ms-transition-delay:400ms;
+	}
+
+.fadein a{
+	color: #23a4ff; /*--オーシャンブルー--*/
+	text-decoration: none;
+}
+
+.fadein a:hover{
+	color: #23ff85; /*-- 文字色をオレンジ色 --*/
+	text-decoration: none;
+}
+
+.fadein a:visited {
+	color: #e78000;
+	text-decoration: none;
+}
+
+/*アコーディオン全体*/
+.accordion-area{
+    list-style: none;
+    width: 96%;
+    max-width: 900px;
+    margin:0 auto;
+}
+
+.accordion-area li{
+    margin: 10px 0;
+}
+
+.accordion-area section {
+	border: 1px solid #ccc;
+}
+
+.header {
+  height: 25px;
+  width: 100%;
+  padding: 0px 15px;
+  background-color:#191919;
+  z-index:10;
+  position: fixed;
+  top: 0;
+  display: flex;
+}
+
+.logo {
+  justify-content: center;
+  display: flex;
+}
+
+.header nav {
+    display: block;
+}
+
+.header ul {
+  justify-content: center;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header li {
+	list-style-type:none;		/*リストマーカー無しにする*/
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  line-height: 25px;
+  padding: 0 20px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px 15px; /* 上下 左右 */
+  border: solid 1px #333; /* 線の種類 太さ 色 */
+}
+
+.center{
+text-align: center;
+}
+
+.inline {
+  display: inline;
+ }
+
+#centerlogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*==================================================
+スライダーのためのcss始まり
+===================================*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:100%;
+    margin:0 auto;
+}
+
+.slider img {
+  height:auto;
+	width: 100%;
+}
+
+.slider .slick-slide {
+	transform: scale(0.8);/*左右の画像のサイズを80%に*/
+	transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+	opacity: 1;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+	transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+	opacity: 1;/*透過なし*/
+}
+
+.silder li a {
+	color: #D8D8D8
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+    text-align:center;
+	margin:20px 0 0 0;
+}
+
+.slick-dots li {
+    display:inline-block;
+	margin:0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;/*ドットボタンのサイズ*/
+    height:8px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background:#333;/*ドットボタンの現在地表示の色*/
+}
+/*==================================================
+スライダーのためのcss終わり
+===================================*/
+
+/* ボタンのcss始 */
+.heading3{
+    margin:0px 0px 40px 0px;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #0066DB;
+    padding: 10px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.75s;
+    cursor: pointer;
+}
+
+.heading3:hover{
+    background: #0066DB;
+}
+/* ボタンのcss終 */
+
+.banner_outline{
+  width:530px;
+  height:130px;
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  background-image: linear-gradient(125deg,#00a56a,#0078a5);
+}
+
+.bannermessage{
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.banner{
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.FullIframe{
+  border:none;
+  width:100%;
+  height:100%;
+}
+
+/* container.start */
+.wrapper{
+    width:100%;
+    opacity: 0;
+    animation-name: WrapperAnim;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes WrapperAnim{
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.wrapper .container{
+    margin:0px auto;
+    padding:80px 0px;
+}
+/* content */
+@media (min-width: 992px) {
+    .wrapper .container .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.wrapper .content-item {
+    width:100%;
+}
+@media (min-width: 992px) {
+    .wrapper .content-item {
+        width:50%;
+    }
+}
+.wrapper .image{
+    display:block;
+    max-width:30%;
+    margin:0px auto;
+	height: auto;
+}
+.wrapper .text{
+    padding:50px;
+}
+.wrapper .text .heading{
+    margin:0px 0px 40px 0px;
+    font-size: 35px;
+    font-weight: normal;
+    text-align: center;
+    color: #19ACFA;
+    text-decoration: none;
+}
+.wrapper .text .heading:hover{
+    text-decoration: underline;
+}
+.wrapper .text .heading:visited{
+    color: #2467F9;
+}
+.wrapper .text .heading2{
+    margin:0px 0px 40px 0px;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #0066DB;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.75s;
+    cursor: pointer;
+}
+
+.wrapper .text .heading2:hover{
+    background: #0066DB;
+}
+.wrapper .text .heading2:hover{
+    background: #0066DB;
+}
+/* container.end */
+
+/* NewsCSS.Start */
+dl{
+
+  padding:10px;
+  width:100%;
+}
+
+dt{
+  color:#028aff;
+  font-weight:bold;
+  padding:0 10px 0 0;
+  width:120px;
+  float:left;
+  margin-bottom:7px;
+}
+
+dd{
+  color:#fff;
+  margin-bottom:7px;
+
+}
+
+dl::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+/* NewsCSS.end */
+
+.acd-check{
+    display: none;
+}
+.acd-label{
+    background: #0068b7;
+    color: #fff;
+    display: block;
+    margin-bottom: 1px;
+    padding: 10px;
+    position: relative;
+}
+.acd-label:after{
+    background: #00479d;
+    box-sizing: border-box;
+    content: '＋';
+    display: block;
+    font-family: "Noto Sans JP";
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0px;
+}
+.acd-content{
+    display: block;
+    height: 0;
+    opacity: 0;
+    padding: 0 10px;
+    transition: 1s;
+    visibility: hidden;
+}
+.acd-check:checked + .acd-label:after{
+    content: '－';
+}
+.acd-check:checked + .acd-label + .acd-content{
+    height: auto;
+    opacity: 1;
+    padding: 10px;
+    visibility: visible;
+}
+
+/* Tab.start */
+
+.tab{
+  display: flex;
+  flex-wrap: wrap;
+}
+.tab li a{
+  display: block;
+  background:#191919;
+  margin:0 2px;
+  padding:10px 20px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  line-height: 50px;
+  padding: 0 20px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a{
+  background:#151515;
+}
+
+
+/*エリアの表示非表示と形状*/
+.area {
+	display: none;/*はじめは非表示*/
+	opacity: 0;/*透過0*/
+	background:rgba(20,20,20,0);
+	padding:50px 20px;
+	border: 5px solid;
+  	border-image: linear-gradient(125deg,#0078a5,#00a56a);
+  	border-image-slice: 1;
+}
+
+/*areaにis-activeというクラスがついた時の形状*/
+.area.is-active {
+    display: block;/*表示*/
+    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes displayAnime{
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Tab.end */
